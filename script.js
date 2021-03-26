@@ -14,7 +14,7 @@ $(document).ready(function () {
         console.log(input)
 
         var countDownDate = new Date().getTime() + input;
-
+        document.getElementById("start").disabled = true;
         // Update the count down every 1 second
         var x = setInterval(function() {
 
@@ -34,7 +34,8 @@ $(document).ready(function () {
             // If the count down is finished, write some text 
             if (distance < 0) {
                 clearInterval(x);
-                document.getElementById("demo").innerHTML = "EXPIRED";
+                document.getElementById("demo").innerHTML = "Finished";
+                document.getElementById("start").disabled = false;
             }
         }, 1000);
     });
